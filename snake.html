@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "game" width="400" height="400" style="border:1px solid #878686;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+
+    <div>
+        <select name="level" id="level" onkeydown="a(event)">
+            <option value="4">easy</option>
+            <option value="6">medium</option>
+            <option value="7">hard</option>
+            <option value="10">Difficult</option>
+        </select>
+        &nbsp;
+        <input type="color" id="s_head" name="s_head" value="#4E2A84" />
+        <label for="s_head">Head</label>
+
+        <input type="color" id="s_body" name="s_body" value="#BF00FF" />
+        <label for="s_body">Body</label>
+
+        <input type="color" id="apple" name="apple" value="#FF0000" />
+        <label for="apple">Apple</label>
+
+
+    </div>
+    <div id="speed"></div>
+    
+    <script src="main.js"></script>
+
+	<script>
+        window.onload = function(){
+            document.getElementById("a").focus();
+        }
+        function a(e){
+            var keyCode = window.event ? e.keyCode : e.which;
+            if(e.preventDefault){
+                if(keyCode==37||keyCode==38||keyCode==39||keyCode==40){
+                    e.preventDefault();
+                }
+            }else{
+                if(keyCode==37||keyCode==38||keyCode==39||keyCode==40){
+                    window.event.returnValue == false;
+                }
+            }
+        }//¸T¥Î¤W¤U¥ª¥kÁä¥h±±¨îselect
+    </script>
+</body>
+</html>
